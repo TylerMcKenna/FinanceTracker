@@ -1,9 +1,9 @@
-namespace FinanceTracker.Models;
+namespace Models {
+    public class Category
+    {
+        public int Id { get; set; }
+        public string? CategoryName { get; set; }
 
-public class Category
-{
-    public int Id { get; set; }
-    public string? CategoryName { get; set; }
-
-    public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+        public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    }
 }
