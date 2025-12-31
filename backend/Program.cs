@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Models;
+using DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,15 +16,30 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/", () => "Hello World!");
 
+// to be abstracted into services
+app.MapGet("/", () => "Hello World!");
 app.MapPost("/category", CreateCategory);
 
-static async Task<IResult> CreateCategory(Category category, AppDbContext db)
+// to be abstracted into services
+static async Task<IResult> CreateCategory(CategoryDTO categoryDTO, AppDbContext db)
 {
+    var category = new Category
+    {
+        CategoryName = categoryDTO.CategoryName
+    };
+
     db.Categories.Add(category);
     await db.SaveChangesAsync();
-    return Results.Created($"/category/{category.Id}", category);
+
+    var responseCategory = new CategoryDTO
+    {
+        Id = category.Id,
+        CategoryName = category.CategoryName
+    };
+
+    // // Factory pattern
+    return TypedResults.Created($"/category/{category.Id}", responseCategory);
 }
 
 app.Run();
