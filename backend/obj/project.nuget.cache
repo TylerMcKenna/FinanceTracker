@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/Ns16DlEmuM=",
+  "dgSpecHash": "3rEm7l6Tr4w=",
   "success": true,
   "projectFilePath": "/home/jimmybob/repos/FinanceTracker/backend/MinimalApiSample.csproj",
   "expectedPackageFiles": [
     "/home/jimmybob/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/jimmybob/.nuget/packages/microsoft.aspnetcore.authentication.google/10.0.1/microsoft.aspnetcore.authentication.google.10.0.1.nupkg.sha512",
     "/home/jimmybob/.nuget/packages/microsoft.build/17.7.2/microsoft.build.17.7.2.nupkg.sha512",
     "/home/jimmybob/.nuget/packages/microsoft.build.framework/17.14.28/microsoft.build.framework.17.14.28.nupkg.sha512",
     "/home/jimmybob/.nuget/packages/microsoft.build.tasks.core/17.14.28/microsoft.build.tasks.core.17.14.28.nupkg.sha512",
